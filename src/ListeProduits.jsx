@@ -1,16 +1,22 @@
-import './ListeProduits.css';
+import './ListeProduits.scss';
 import Produit from './Produit';
+import tabProduits from './data/produits.json';
 
 export default function ListeProduits(props)
 {
     return(
         <>
-            <h2>Produits disponobles</h2>
-            <ul className="ListeProduits">
-               <Produit nom="T-Shirt col ron" prix="19.99" id="prd0001"/>
-               <Produit nom="Chandail manche long" prix="22.99" id="prd0003"/>
-               <Produit nom="Shorts Kaki" prix="25.99" id="prd0006"/>
-            </ul>
+            <div className="ListeProduits"> 
+                <h2>Produits disponobles</h2>
+                <ul>
+                    {/* Generer des produits à partir du .JSON */}
+
+                    {tabProduits.map( produit => 
+                        <Produit key={produit.id} nom={produit.nom} prix={produit.prix} id={produit.id}/>
+                    )}
+
+                </ul>
+            </div>
         </>
     );
 }

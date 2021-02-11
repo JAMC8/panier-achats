@@ -1,37 +1,37 @@
 [
     {
         "nom" : "Chandail homme 1",
-        "pris" : 19.50,
+        "prix" : 19.50,
         "id" : "prd0001"
     },
 
     {
-        "nom" : "Chandail homme 2",
-        "pris" : 12.89,
+        "nom" : "Chandail homme 2 - produit avec un nom plus long que les autres",
+        "prix" : 12.89,
         "id" : "prd0002"
     },
 
     {
         "nom" : "Chandail homme 3",
-        "pris" : 22.80,
+        "prix" : 22.80,
         "id" : "prd0003"
     },
 
     {
         "nom" : "Pantalon femme 1",
-        "pris" : 32.56,
+        "prix" : 32.56,
         "id" : "prd0004"
     },
 
     {
-        "nom" : "Pantalon femme 2",
-        "pris" : 42.89,
+        "nom" : "Pantalon femme 2 - produit avec un nom plus long que les autres",
+        "prix" : 42.89,
         "id" : "prd0005"
     },
 
     {
         "nom" : "Chandail femme 1",
-        "pris" : 19.89,
+        "prix" : 19.89,
         "id" : "prd0006"
     }
 ]
