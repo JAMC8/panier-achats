@@ -12,7 +12,7 @@ export default function ListeProduits(props)
                     {/* Generer des produits à partir du .JSON */}
 
                     {tabProduits.map( produit => 
-                        <Produit key={produit.id} nom={produit.nom} prix={produit.prix} id={produit.id}/>
+                        <Produit etatPanier={props.etatPanier} nom={produit.nom} prix={produit.prix} id={produit.id} key={produit.id} />
                     )}
 
                 </ul>

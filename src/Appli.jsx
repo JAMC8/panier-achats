@@ -14,18 +14,13 @@ function Appli() {
 
   // Gérer l'état avec les "React Hooks"
   // useState va créer une varibale d'état initialisée à {}
-
-  /*const etatPanier = useState({});
-  console.log("0 ", etatPanier[0]);
-  console.log("1 ", etatPanier[1]);;*/
-
-  const [panier, setPanier] = useState(false); // Destructuring Arrays
-
+  const etatPanier = useState({});
+  
   return (
     <div className="Appli">
-      <Entete />
+      <Entete etatPanier={etatPanier} />
       <section className="contenuPrincipal">
-        <ListeProduits />
+        <ListeProduits etatPanier={etatPanier} />
       </section>
       <PiedDePage />
     </div>

@@ -3,7 +3,27 @@ import './Produit.scss';
 
 export default function Produit(props) 
 {
-    //console.log(props);
+    const [panier, setPanier] = props.etatPanier;
+
+    const {nom, prix, id} = props; // Ça veut dire --> const id = props.id;
+
+    function ajouterPanier()
+    {
+        if(panier[id])
+        {
+            panier[id].qte++;
+        }
+        else
+        {
+            panier[id] = {prix: prix, qte: 1}
+        }
+
+        //console.log("Objets: ", panier);
+        //console.log("Tableau de valeurs: ", Object.values(panier));
+
+        setPanier(JSON.parse(JSON.stringify(panier))); //{...panier}
+    }
+
     return(
         <li className="Produit">
             <img src={"images-produits/" + props.id + '.webp'} alt=""/>
@@ -11,7 +31,7 @@ export default function Produit(props)
                 <p className="nom">{props.nom}</p>
                 <p className="prix">{props.prix}</p>
             </div>
-            <BtnAjoutPanier />
+            <BtnAjoutPanier onClick={ajouterPanier} />
         </li>
     )
 }
