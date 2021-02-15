@@ -1,12 +1,20 @@
-html {
+html 
+{
     box-sizing: border-box;
 }
 
-*, *:before, **:after {
+*, *:before, **:after 
+{
     box-sizing :inherit;
 }
 
-body {
+body 
+{
     width: 90%;
     margin: 0 auto;
+}
+
+.cacher
+{
+    display: none;
 }

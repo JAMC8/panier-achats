@@ -15,7 +15,7 @@ export default function Produit(props)
         }
         else
         {
-            panier[id] = {prix: prix, qte: 1}
+            panier[id] = {nom: nom, prix: prix, qte: 1}
         }
 
         //console.log("Objets: ", panier);
@@ -24,12 +24,14 @@ export default function Produit(props)
         setPanier(JSON.parse(JSON.stringify(panier))); //{...panier}
     }
 
+
+    //Changement dans <p> nom et prix props.nom props.prix
     return(
         <li className="Produit">
             <img src={"images-produits/" + props.id + '.webp'} alt=""/>
             <div className="info">
-                <p className="nom">{props.nom}</p>
-                <p className="prix">{props.prix}</p>
+                <p className="nom">{nom}</p>
+                <p className="prix">{prix}</p> 
             </div>
             <BtnAjoutPanier onClick={ajouterPanier} />
         </li>

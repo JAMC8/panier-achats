@@ -1,33 +1,21 @@
 import './Entete.scss';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
+import SommairePanier from './SommairePanier';
+import { useState } from 'react';
 
-function Entete(props) 
+function Entete({etatPanier}) 
 {
-    const [panier, setPanier] = props.etatPanier;
-    
-
+    const [panier] = etatPanier;
     //Calculer nbr article dans panier
     //const nbArticleDiff = Object.values(panier).length;   
     const valeursPanier = Object.values(panier); 
-    // let totalArticles = 0;
-    // for(let i = 0; i < valeursPanier.length; i++)
-    // {
-    //     totalArticles += valeursPanier[i].qte;        
-    // }
+    const [sommaireAffichable, setSommaireAffichable] = useState(false);
 
-    //Calculer nbr total d'articles avec reduce()
-    // const totalArticles2 = valeursPanier.reduce(function(valInit, valCourante){
-    //     return valInit + valCourante.qte;
-    // }, 0);
-
-    // OU
-    
-    // const totalArticles2 = valeursPanier.reduce(
-    //     (valInit, valCourante) => valInit + valCourante.qte
-    // , 0);
-
-    // OU mettre dans <Badge>
+    function basculerAffichageSommairePanier()
+    {
+        setSommaireAffichable(!sommaireAffichable);
+    }
 
     return (
         <header className="Entete">
@@ -40,9 +28,10 @@ function Entete(props)
             <ul className="navUtilisateur"> 
                 <li>
                     Panier d'achats                    
-                    <Badge badgeContent={valeursPanier.reduce((valInit, valCourante) => valInit + valCourante.qte, 0)} color="primary">
+                    <Badge onClick={basculerAffichageSommairePanier} badgeContent={valeursPanier.reduce((valInit, eltCourante) => valInit + eltCourante.qte, 0)} color="primary">
                         <ShoppingCartIcon />
                     </Badge>
+                    <SommairePanier panier={panier} affichable={sommaireAffichable} />
                 </li>
                 <li>Mon compte</li>
             </ul>

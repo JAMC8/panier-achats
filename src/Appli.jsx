@@ -14,7 +14,19 @@ function Appli() {
 
   // Gérer l'état avec les "React Hooks"
   // useState va créer une varibale d'état initialisée à {}
-  const etatPanier = useState({});
+  const etatPanier = useState(() => {
+    let panierDansLS = window.localStorage.getItem('panier');
+    if(panierDansLS !== null)
+    {
+      return JSON.parse(panierDansLS);
+    }
+    else
+    {
+      return {};
+    }
+  });
+
+  window.localStorage.setItem('panier', JSON.stringify(etatPanier[0]));
   
   return (
     <div className="Appli">
