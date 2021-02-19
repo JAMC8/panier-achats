@@ -1,18 +1,12 @@
 import'./BtnAjoutPanier.scss';
-import { useState } from 'react';
 import {Badge} from '@material-ui/core';
-import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutlineOutlined'
 
-export default function BtnAjoutPanier(props)
+export default function BtnAjoutPanier({onClick, qte, texte, classeCss})
 {
-
-    const [texte, setTexte] = useState("Ajouter au panier");
-    const [qte, setQte] = useState(0);
-
     return(
         
         <Badge badgeContent={qte} color="primary">
-            <button onClick={function(event) {props.onClick(); setTexte(<AddCircleOutlineIcon/>); setQte(qte+1); event.target.classList.add('rouge')}} className="BtnAjoutPanier">
+            <button onClick={onClick} className={`BtnAjoutPanier ${classeCss}`}>
                 {texte}
             </button>
         </Badge>
