@@ -44,6 +44,6 @@
       "last 1 safari version"
     ]
   },
-  "homepage-github-inactif": "https://jamc8.github.io/panier-achats/",
-  "homepage": "https://panier-achats-test.netlify.app"
+  "homepage": "https://jamc8.github.io/panier-achats/",
+  "homepage-netlify": "https://panier-achats-test.netlify.app"
 }
