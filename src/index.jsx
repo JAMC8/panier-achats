@@ -6,7 +6,7 @@ import Appli from './Appli';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Router>
+    <Router basename="/panier-achats">
       <Appli />
     </Router>
   </React.StrictMode>,
