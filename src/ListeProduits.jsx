@@ -1,6 +1,17 @@
 import './ListeProduits.scss';
 import Produit from './Produit';
 import tabProduits from './data/produits.json';
+import fbAppli from 'firebase/app';
+import "firebase/firestore";
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCq8AIp4VBWtww6QRA2uaU2q_zcZ8CYlHY",
+    authDomain: "panier-achats.firebaseapp.com",
+    projectId: "panier-achats",
+    storageBucket: "panier-achats.appspot.com",
+    messagingSenderId: "786866074949",
+    appId: "1:786866074949:web:7639a88b313fe92600ba2c"
+  };
 
 export default function ListeProduits(props)
 {
