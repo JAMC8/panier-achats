@@ -3,9 +3,9 @@ import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import Badge from '@material-ui/core/Badge';
 import SommairePanier from './SommairePanier';
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 
-function Entete({etatPanier}) 
+export default function Entete({etatPanier}) 
 {
     const [panier] = etatPanier;
     //Calculer nbr article dans panier
@@ -21,14 +21,14 @@ function Entete({etatPanier})
     return (
         <header className="Entete">
             <div className="logo">
-                <Link to="/">
+                <NavLink to="/" activeClassName="navActive" exact>
                     MagasinLogo
-                </Link>
+                </NavLink>
             </div>
             <ul className="navPrincipale">
-                <li><Link to="/nos-produits">Produits</Link></li>
-                <li><Link to="/a-propos-de-nous">À propos de nous</Link></li>
-                <li><Link to="/contactez-nous">Contactez-nous</Link></li>
+                <li><NavLink to="/nos-produits" activeClassName="navActive">Produits</NavLink></li>
+                <li><NavLink to="/a-propos-de-nous" activeClassName="navActive">À propos de nous</NavLink></li>
+                <li><NavLink to="/contactez-nous" activeClassName="navActive">Contactez-nous</NavLink></li>
             </ul>
             <ul className="navUtilisateur"> 
                 <li>
@@ -44,5 +44,4 @@ function Entete({etatPanier})
     )
 }
 
-export default Entete;
 
