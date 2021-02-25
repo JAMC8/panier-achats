@@ -1,7 +1,7 @@
 [
     {
         "nom" : "Chandail homme 1",
-        "prix" : 19.50,
+        "prix" : 12.50,
         "id" : "prd0001"
     },
 
@@ -19,7 +19,7 @@
 
     {
         "nom" : "Pantalon femme 1",
-        "prix" : 32.56,
+        "prix" : 12.56,
         "id" : "prd0004"
     },
 
