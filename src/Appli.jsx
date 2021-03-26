@@ -12,7 +12,7 @@ function Appli() {
   
   const etatPanier = useLocalStorageState({}, "panier");
   
-  // <Route path="/" component={Accueil} exact>
+  //<Route path="/" component={Accueil} exact>
 
   return (
     <div className="Appli">
